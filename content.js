@@ -41,7 +41,7 @@ window.UI = {
     downloads: "скачиваний", dlCount: "Игру скачали",
     supTitle: "Поддержать игру", supText: "Игра бесплатная и без рекламы. Если она вам нравится, вы можете помочь ей расти: каждая поддержка — это новые обновления, музыка и персонажи.",
     supSoon: "Ссылки для доната скоро появятся. А пока можно помочь по-другому:", supFree: "Помочь бесплатно",
-    supWays: [["ui_love", "Расскажите друзьям", "Поделитесь ссылкой на сайт — так игру найдёт больше людей."], ["ui_talk", "Подпишитесь на YouTube", "Лайк и комментарий под видео очень помогают каналу."], ["ui_quest", "Предложите идею", "Лучшие идеи попадают в следующие версии."], ["ui_hammer", "Найдите баг", "Опишите, что сломалось, — исправим в обновлении."]],
+    supWays: [["ui_love", "Расскажите друзьям", "Поделитесь ссылкой на сайт — так игру найдёт больше людей."], ["ui_talk", "Подпишитесь на YouTube и TikTok", "Лайк и комментарий под видео очень помогают каналу."], ["ui_quest", "Предложите идею", "Лучшие идеи попадают в следующие версии."], ["ui_hammer", "Найдите баг", "Опишите, что сломалось, — исправим в обновлении."]],
     share: "Поделиться ссылкой", copied: "Ссылка скопирована!", ytSub: "Канал на YouTube", ytSoon: "Скоро на YouTube", made: "Сделано на Godot 4.3",
   },
   en: {
@@ -61,7 +61,7 @@ window.UI = {
     downloads: "downloads", dlCount: "Downloads",
     supTitle: "Support the game", supText: "The game is free and has no ads. If you enjoy it, you can help it grow: every bit of support means new updates, music and characters.",
     supSoon: "Donation links are coming soon. Meanwhile, you can help in other ways:", supFree: "Help for free",
-    supWays: [["ui_love", "Tell your friends", "Share the site link so more people find the game."], ["ui_talk", "Subscribe on YouTube", "A like and a comment really help the channel."], ["ui_quest", "Suggest an idea", "The best ideas make it into the next versions."], ["ui_hammer", "Report a bug", "Tell us what broke and we’ll fix it in an update."]],
+    supWays: [["ui_love", "Tell your friends", "Share the site link so more people find the game."], ["ui_talk", "Follow on YouTube and TikTok", "A like and a comment really help the channel."], ["ui_quest", "Suggest an idea", "The best ideas make it into the next versions."], ["ui_hammer", "Report a bug", "Tell us what broke and we’ll fix it in an update."]],
     share: "Share the link", copied: "Link copied!", ytSub: "YouTube channel", ytSoon: "Coming to YouTube", made: "Made with Godot 4.3",
   }
 };
