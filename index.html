@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пепел и Чары: Королевства — пиксельная RPG для Android</title>
+<meta name="description" content="Пиксельная RPG-песочница для Android: выживание, магия, стройка, королевства, любовь и семья. Скачать APK бесплатно.">
+<meta property="og:title" content="Пепел и Чары: Королевства">
+<meta property="og:description" content="Пиксельная RPG-песочница для Android">
+<meta property="og:image" content="assets/img/banner.jpg">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<header>
+  <div class="bar">
+    <img class="logo" src="assets/img/logo.png" alt="Пепел и Чары" data-go="home">
+    <div class="sp"></div>
+    <button class="btn" id="mus" title="Музыка"><span>♪</span><span class="lbl" data-t="music"></span></button>
+    <button class="btn" id="snd" title="Звук"><span>🔊</span><span class="lbl" data-t="sound"></span></button>
+    <button class="btn" id="lang">EN</button>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<section id="tab-home">
+  <div class="hero">
+    <img class="logo" src="assets/img/logo.png" alt="Пепел и Чары: Королевства">
+    <p data-t="tagline"></p>
+    <div class="row">
+      <button class="btn big" data-go="dl"><img src="assets/ui/ui_bag.png" alt=""><span data-t="download"></span><span class="ver">v3.2</span></button>
+      <button class="btn big" data-go="video" style="background:#2a3b5a;border-color:var(--blue)"><img src="assets/ui/ui_map.png" alt=""><span data-t="watch"></span></button>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="walkers" id="walkers"></div>
+  <div class="panel"><video id="homevid" src="assets/video/trailer.mp4" poster="assets/video/trailer.jpg" controls preload="none" playsinline></video></div>
+  <div class="grid g2" id="features"></div>
+</section>
+
+<section id="tab-updates"><div class="panel"><h2 data-t="tabs.updates"></h2><div id="updlist"></div></div></section>
+<section id="tab-bugs"><div class="panel"><h2 data-t="tabs.bugs"></h2><div id="buglist"></div></div></section>
+
+<section id="tab-items">
+  <div class="panel">
+    <h2><span data-t="tabs.items"></span> <span class="mute pix" id="icount" style="font-size:16px"></span></h2>
+    <input id="isearch" type="search">
+    <div class="filters" id="ifilters" style="margin-top:10px"></div>
+    <div class="items-wrap">
+      <div class="icards" id="igrid"></div>
+      <div class="item-view panel" id="iview" style="margin:0"></div>
+    </div>
+  </div>
+</section>
+
+<section id="tab-chars">
+  <div class="panel"><h2 data-t="prof"></h2><div class="grid g3" id="profs"></div></div>
+  <div class="panel"><h2 data-t="npc"></h2><div class="grid g3" id="npcs"></div></div>
+</section>
+
+<section id="tab-mobs"><div class="panel"><h2 data-t="tabs.mobs"></h2><div class="grid g4" id="moblist"></div></div></section>
+
+<section id="tab-world">
+  <div class="panel"><h2 data-t="tabs.world"></h2><div class="grid g2" id="worldlist"></div></div>
+  <div class="panel"><h2 class="pix">Скриншоты / Screenshots</h2><div class="gal" id="gal"></div></div>
+</section>
+
+<section id="tab-video">
+  <div class="panel" id="ytbox" style="display:none"><h2>YouTube</h2><div class="yt"><iframe id="ytframe" allowfullscreen loading="lazy" title="YouTube"></iframe></div></div>
+  <div class="panel"><h2 data-t="videoLocal"></h2>
+    <div class="grid g2">
+      <div><h3>Трейлер / Trailer</h3><video src="assets/video/trailer.mp4" poster="assets/video/trailer.jpg" controls preload="none" playsinline></video></div>
+      <div><h3>Обзор обновлений / Updates review</h3><video src="assets/video/review.mp4" poster="assets/video/review.jpg" controls preload="none" playsinline></video></div>
+      <div style="max-width:360px"><h3>Shorts</h3><video src="assets/video/shorts.mp4" poster="assets/video/shorts.jpg" controls preload="none" playsinline></video></div>
+    </div>
+  </div>
+</section>
+
+<section id="tab-sounds">
+  <div class="panel"><h2 data-t="soundsMusic"></h2><div class="tracks" id="tracks"></div></div>
+  <div class="panel"><h2 data-t="soundsSfx"></h2><div class="sfx" id="sfxlist"></div></div>
+</section>
+
+<section id="tab-dl">
+  <div class="panel">
+    <h2 data-t="dlTitle"></h2>
+    <div class="grid g2">
+      <div class="dl"><img src="assets/img/avatar.jpg" alt="">
+        <div><h3 data-t="dlMain"></h3><p class="mute">v3.2 · Android 7.0+ · ~60 MB</p><a class="btn big" id="apk1" download><span data-t="download"></span></a></div></div>
+      <div class="dl"><img src="assets/ui/ui_settings.png" alt="" style="width:72px">
+        <div><h3 data-t="dlDev"></h3><p class="mute" data-t="dlDevNote"></p><a class="btn" id="apk2" download>DEV APK</a></div></div>
+    </div>
+  </div>
+  <div class="panel"><h3 data-t="install"></h3><ol id="steps"></ol></div>
+  <div class="panel"><h3 data-t="credits"></h3><ul id="credits" class="mute"></ul><p><a href="CREDITS.txt" target="_blank">CREDITS.txt</a></p><p class="mute" data-t="made"></p></div>
+</section>
+
+<section id="tab-ideas">
+  <div class="panel" style="max-width:720px;margin:auto">
+    <h2 data-t="ideasTitle"></h2>
+    <p><label data-t="ideaType"></label><select id="itype"></select></p>
+    <p><input id="ititle" maxlength="90" placeholder="…"></p>
+    <p><textarea id="itext" rows="6"></textarea></p>
+    <button class="btn big" id="isend"><img src="assets/ui/ui_quest.png" alt=""><span data-t="send"></span></button>
+    <p class="mute" data-t="ideaHint"></p>
+    <p><a id="iall" target="_blank" rel="noopener" data-t="allIdeas"></a></p>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Пепел и Чары: Королевства · <a id="repo" target="_blank" rel="noopener">GitHub</a></footer>
+<div id="lb"><img alt=""></div>
+<div class="toast" id="toast"></div>
+<script src="content.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

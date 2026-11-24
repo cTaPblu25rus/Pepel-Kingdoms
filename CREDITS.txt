@@ -1,0 +1,22 @@
+ПЕПЕЛ И ЧАРЫ: КОРОЛЕВСТВА
+Пиксельная RPG-песочница. Игра и код: сделано для Эдуарда с помощью Claude.
+
+ГРАФИКА (свободные лицензии)
+• Персонажи, жители, нежить, одежда и оружие — Universal LPC Spritesheet Character Generator (Liberated Pixel Cup). Авторы: Benjamin K. Smith (BenCreating), Durrani, Eliza Wyatt (ElizaWy), ElizaWy, Evert, JaidynReiman, Johannes Sjölund (wulax), Manuel Riecke (MrBeast), Matthew Krohn (makrohn), MuffinElZangano, Napsio, Nila122, Pierre Vigier (pvigier), Sander Frenken (castelonia), Stephen Challener (Redshrike), TheraHedwig, bluecarrot16, dalonedrau. CC-BY-SA 3.0 / OGA-BY 3.0 / GPL 3.0.
+• LPC Base Assets (земля, вода, монстры: слизни, мыши, пчёлы, глазоеды, призраки, черви, тыквенный король) — Lanea Zimmerman (Sharm), Stephen Challener (Redshrike), Charles Sanchez, Manuel Riecke, Daniel Armstrong. CC-BY-SA 3.0 / GPL 3.0.
+• [LPC] Trees — bluecarrot16, Jetrel, Zabin, Hyptosis, Surt, Buch, Johann Charlot, Stephen Challener и др. CC-BY-SA 3.0.
+• [LPC] Crops — bluecarrot16, Daniel Armstrong, Joshua Taylor, Lanea Zimmerman и др. CC-BY-SA 3.0 / GPL 3.0.
+• LPC style farm animals — daneeklu. CC-BY 3.0 / GPL 2.0.
+• [LPC] Farming tilesets, magic animations and UI — daneeklu. CC-BY-SA 3.0 / GPL 3.0.
+• [LPC] House interior and decorations — Lanea Zimmerman, Janna/Jannax, Hyptosis и др. CC-BY-SA 3.0.
+• LPC Tile Atlas 1 и 2, LPC City outside — Casper Nilsson, Daniel Cook, Johann Charlot, Tuomo Untinen, Hyptosis, Guido Bos и др. CC-BY-SA 3.0.
+• 496 pixel art icons for medieval/fantasy RPG — Henrique Lazarini (7Soul1). CC0.
+• Эффекты заклинаний — Clint Bellanger (CC-BY 3.0), Mikodrak (CC0).
+• Шрифты: Pixelify Sans (OFL), Rubik (OFL), DejaVu Sans (свободная лицензия Bitstream Vera).
+
+ЗВУК И МУЗЫКА
+• 80 CC0 RPG SFX — rubberduck (CC0). Ghost moans — qubodup (CC0). Fire crackling (CC0).
+• Empty City (CC0), Dark Ambience Loop — Iwan Gabovitch (CC-BY 3.0), Dark Forest Theme (CC0).
+• Chiptune Adventures (Stage 1, Stage 2, Boss Fight, Stage Select) — Juhani Junkala (SubspaceAudio). CC0.
+
+Изменённые спрайты LPC распространяются на условиях CC-BY-SA 3.0.

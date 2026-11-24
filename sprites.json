@@ -1,0 +1,210 @@
+{
+"p_warrior": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"p_hunter": {
+"walk": 8,
+"act": "shoot",
+"actn": 13
+},
+"p_mage": {
+"walk": 8,
+"act": "spellcast",
+"actn": 7
+},
+"p_farmer": {
+"walk": 8,
+"act": "thrust",
+"actn": 8
+},
+"p_smith": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"p_merchant": {
+"walk": 8,
+"act": "thrust",
+"actn": 8
+},
+"n_guard": {
+"walk": 8,
+"act": "thrust",
+"actn": 8
+},
+"n_healer": {
+"walk": 8,
+"act": "spellcast",
+"actn": 7
+},
+"n_innkeeper": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"n_king": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"n_queen": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"n_baker": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"n_carpenter": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"n_jeweler": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"n_guildmaster": {
+"walk": 8,
+"act": "thrust",
+"actn": 8
+},
+"n_villager": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"n_child": {
+"walk": 8,
+"act": "walk",
+"actn": 8
+},
+"m_chicken": {
+"walk": 4,
+"act": "walk",
+"actn": 4,
+"w": 80,
+"h": 116
+},
+"m_cow": {
+"walk": 4,
+"act": "walk",
+"actn": 4,
+"w": 54,
+"h": 118
+},
+"m_pig": {
+"walk": 4,
+"act": "walk",
+"actn": 4,
+"w": 42,
+"h": 92
+},
+"m_sheep": {
+"walk": 4,
+"act": "walk",
+"actn": 4,
+"w": 81,
+"h": 126
+},
+"m_llama": {
+"walk": 4,
+"act": "walk",
+"actn": 4,
+"w": 54,
+"h": 128
+},
+"m_slime": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 120,
+"h": 120
+},
+"m_snake": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 56,
+"h": 128
+},
+"m_bee": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 96,
+"h": 124
+},
+"m_bat": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 128,
+"h": 112
+},
+"m_eyeball": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 96,
+"h": 114
+},
+"m_ghost": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 72,
+"h": 92
+},
+"m_worm": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 66,
+"h": 96
+},
+"m_flower": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 54,
+"h": 74
+},
+"m_pumpking": {
+"walk": 3,
+"act": "walk",
+"actn": 3,
+"w": 88,
+"h": 90
+},
+"m_zombie": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"m_skeleton": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"m_bandit": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"m_goblin": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+},
+"m_orc": {
+"walk": 8,
+"act": "slash",
+"actn": 6
+}
+}
