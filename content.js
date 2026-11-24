@@ -2,6 +2,7 @@
 window.CONFIG = {
   repo: "cTaPblu25rus/Pepel-Kingdoms",
   // ID ролика на YouTube (часть ссылки после v=). Пока пусто — показываются видео с сайта.
+  youtubeChannel: "https://youtube.com/@pepel_i_chary",
   // Ролики на YouTube: [ID, название RU, название EN]
   youtube: [
     ["djKfMAfGBjM", "Трейлер: RPG для телефона, где можно всё", "Trailer: a phone RPG where you can do everything"],
