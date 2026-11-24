@@ -1,6 +1,6 @@
 (() => {
 const G = window.GAME, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const TABS = ["home","updates","bugs","items","chars","mobs","world","video","sounds","dl","ideas"];
+const TABS = ["home","updates","bugs","items","chars","mobs","world","video","sounds","dl","ideas","support"];
 let L = "ru";
 try { L = localStorage.getItem("lang") || "ru"; } catch (e) {}
 const T = k => k.split(".").reduce((o, p) => o && o[p], UI[L]) || k;
@@ -75,7 +75,7 @@ function render() {
   $("#tabs").innerHTML = TABS.map(k => `<button data-go="${k}">${T("tabs." + k)}</button>`).join("");
   $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.go === (location.hash.slice(1) || "home")));
   const i = L === "ru" ? 0 : 1;
-  $("#stats").innerHTML = [[G.items.length, L === "ru" ? "предметов" : "items"], [G.mobs.length, L === "ru" ? "существ" : "creatures"], [6, L === "ru" ? "профессий" : "professions"], [8, L === "ru" ? "станков" : "stations"]].map(s => `<div class="stat"><b>${s[0]}</b>${s[1]}</div>`).join("");
+  $("#stats").innerHTML = [[G.items.length, L === "ru" ? "предметов" : "items"], [G.mobs.length, L === "ru" ? "существ" : "creatures"], [6, L === "ru" ? "профессий" : "professions"], [8, L === "ru" ? "станков" : "stations"], ["<span class=dlnum>…</span>", T("downloads")]].map(s => `<div class="stat"><b>${s[0]}</b>${s[1]}</div>`).join(""); showCount();
   $("#features").innerHTML = FEATURES.map(f => `<div class="panel feat"><img src="assets/ui/${f[0]}.png" alt=""><div><h3>${f[1 + i]}</h3>${f[3 + i]}</div></div>`).join("");
   $("#updlist").innerHTML = UPDATES.map(u => `<div class="upd"><h3>v${u.v} — ${u[L]} <span>${u.date}</span></h3><div class="ucards">${u["items_" + L].map((x, k) => `<figure class="ucard"><img src="assets/upd/u${u.v.replace(".", "")}_${k}.jpg" alt="" loading="lazy" data-zoom><figcaption>${esc(x)}</figcaption></figure>`).join("")}</div></div>`).join("");
   $("#buglist").innerHTML = BUGS.map(b => `<div class="bugc"><div class="bh"><span class="tag">v${b[0]}</span><b>${esc(b[1 + i])}</b> <span style="color:var(--green)">✔ ${L === "ru" ? "исправлено" : "fixed"}</span></div>
@@ -86,7 +86,7 @@ function render() {
   $("#credits").innerHTML = CREDITS.map(c => `<li>${esc(c)}</li>`).join("");
   $("#isearch").placeholder = T("search"); $("#itext").placeholder = T("ideaText");
   $("#itype").innerHTML = UI[L].ideaTypes.map((x, k) => `<option value="${k}">${x}</option>`).join("");
-  renderYT(); renderFilters(); renderItems(); renderChars(); renderMobs(); renderTracks(); renderSfx();
+  renderSupport(); renderYT(); renderFilters(); renderItems(); renderChars(); renderMobs(); renderTracks(); renderSfx();
 }
 $("#lang").onclick = () => { L = L === "ru" ? "en" : "ru"; try { localStorage.setItem("lang", L); } catch (e) {} render(); };
 
@@ -162,7 +162,25 @@ function renderYT() { if (!CONFIG.youtube.length) return; $("#ytbox").style.disp
 document.addEventListener("click", e => { const y = e.target.closest("[data-yt]"); if (!y || y.querySelector("iframe")) return; y.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${y.dataset.yt}?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="YouTube"></iframe>`; music.pause(); });
 $("#apk1").href = CONFIG.apk; $("#apk2").href = CONFIG.apkDev;
 const repoUrl = `https://github.com/${CONFIG.repo}`; $("#repo").href = repoUrl; $("#iall").href = repoUrl + "/issues";
-$$("#apk1,#apk2").forEach(a => a.addEventListener("click", () => sfx("coin", .6)));
+/* ---------- счётчик скачиваний ---------- */
+let dlTotal = null;
+function showCount() { $$(".dlnum").forEach(e => e.textContent = dlTotal == null ? "…" : dlTotal.toLocaleString(L === "ru" ? "ru-RU" : "en-US")); }
+async function getCount(key) { try { const r = await fetch(`${CONFIG.counter}/get/${CONFIG.counterNs}/${key}`); if (!r.ok) return 0; const j = await r.json(); return +j.value || 0; } catch (e) { return null; } }
+Promise.all([getCount("apk"), getCount("apk-dev")]).then(([a, b]) => { if (a == null && b == null) { $$(".dlnum").forEach(e => e.closest(".stat,.dlc") && (e.closest(".stat,.dlc").style.display = "none")); return; } dlTotal = (a || 0) + (b || 0); showCount(); });
+function hit(key) { try { fetch(`${CONFIG.counter}/hit/${CONFIG.counterNs}/${key}`, {keepalive: true}).catch(() => {}); } catch (e) {} if (dlTotal != null) { dlTotal++; showCount(); } }
+$("#apk1").addEventListener("click", () => { sfx("coin", .6); hit("apk"); });
+$("#apk2").addEventListener("click", () => { sfx("coin", .6); hit("apk-dev"); });
+
+/* ---------- поддержка ---------- */
+function renderSupport() {
+  const d = (CONFIG.donate || []).filter(x => x.url);
+  $("#donlist").innerHTML = d.length ? d.map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener"><b>♥ ${esc(x.name)}</b>${esc(x[L])}</a>`).join("") : `<p class="mute">${T("supSoon")}</p>`;
+  $("#supways").innerHTML = UI[L].supWays.map(w => `<div class="feat"><img src="assets/ui/${w[0]}.png" alt=""><div><h3>${w[1]}</h3>${w[2]}</div></div>`).join("");
+  const yt = CONFIG.youtube && CONFIG.youtube[0]; $("#ytsub").href = CONFIG.youtubeChannel || (yt ? `https://youtu.be/${yt[0]}` : "#");
+}
+$("#sharebtn").onclick = async () => { const url = location.origin + location.pathname, title = "Пепел и Чары: Королевства";
+  try { if (navigator.share) { await navigator.share({title, url}); return; } } catch (e) { return; }
+  try { await navigator.clipboard.writeText(url); toast(T("copied")); } catch (e) { prompt(T("share"), url); } };
 $("#isend").onclick = () => { const txt = $("#itext").value.trim(); if (!txt) { toast(L === "ru" ? "Напишите текст" : "Write something first"); return; }
   const ty = UI[L].ideaTypes[$("#itype").value]; const title = `[${ty}] ${$("#ititle").value.trim() || txt.slice(0, 60)}`;
   const body = `${txt}\n\n---\n${L === "ru" ? "Версия игры" : "Game version"}: ${CONFIG.version}\n${L === "ru" ? "Отправлено с сайта" : "Sent from the website"}`;

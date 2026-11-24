@@ -8,6 +8,15 @@ window.CONFIG = {
     ["MSoMffsTiWM", "Обзор: от игры про зомби до целого мира", "Review: from a zombie game to a whole world"]
   ],
   version: "3.2",
+  // Счётчик скачиваний (бесплатный сервис abacus.jasoncameron.dev): считает нажатия на кнопки скачивания
+  counter: "https://abacus.jasoncameron.dev",
+  counterNs: "pepel-kingdoms-ctapblu25rus",
+  // Поддержка проекта: вставьте свои ссылки в url. Пустые кнопки не показываются.
+  donate: [
+    { name: "Boosty", url: "", ru: "Подписка или разовая поддержка", en: "Subscription or one-time support" },
+    { name: "DonationAlerts", url: "", ru: "Донат с сообщением", en: "Donation with a message" },
+    { name: "ЮMoney", url: "", ru: "Перевод картой", en: "Card transfer" }
+  ],
   apk: "download/PepelKingdoms_v3.2.apk",
   apkDev: "download/PepelKingdoms_v3.2_DEV.apk",
   apkSize: "60 МБ"
@@ -17,7 +26,7 @@ window.UI = {
   ru: {
     tagline: "Пиксельная RPG-песочница для Android о выживании среди нежити, магии и жизни в средневековых королевствах",
     download: "Скачать для Android", watch: "Смотреть трейлер",
-    tabs: { home: "Главная", updates: "Обновления", bugs: "Исправленные баги", items: "Предметы", chars: "Персонажи", mobs: "Существа", world: "Мир и история", video: "Видео", sounds: "Звуки", dl: "Скачать", ideas: "Предложения" },
+    tabs: { home: "Главная", updates: "Обновления", bugs: "Исправленные баги", items: "Предметы", chars: "Персонажи", mobs: "Существа", world: "Мир и история", video: "Видео", sounds: "Звуки", dl: "Скачать", ideas: "Предложения", support: "Поддержать" },
     sound: "Звук", music: "Музыка", search: "Поиск предмета…", all: "Все",
     craftAt: "Где сделать", byHand: "Руками", price: "Цена", noRecipe: "Не крафтится: находится в мире или продаётся",
     story: "История", role: "В игре", lines: "Реплики", hp: "Здоровье", dmg: "Урон", drops: "Добыча", hostile: "Враждебный", peaceful: "Мирный", boss: "Босс", flying: "Летает",
@@ -27,12 +36,17 @@ window.UI = {
     dlTitle: "Скачать игру", dlMain: "Обычная версия", dlDev: "Версия для разработчика", dlDevNote: "Меню со всеми возможностями: бессмертие, любые предметы, монстры, сценки. Ставится рядом с обычной.",
     install: "Как установить", installSteps: ["Скачайте APK на телефон.", "Откройте файл и разрешите установку из неизвестных источников.", "Нужен Android 7.0 или новее, около 200 МБ свободного места."],
     soundsMusic: "Музыка из игры", soundsSfx: "Звуки", credits: "Авторы графики, звука и музыки",
-    videoLocal: "Видео с сайта", ytSoon: "Скоро на YouTube", made: "Сделано на Godot 4.3",
+    videoLocal: "Видео с сайта",
+    downloads: "скачиваний", dlCount: "Игру скачали",
+    supTitle: "Поддержать игру", supText: "Игра бесплатная и без рекламы. Если она вам нравится, вы можете помочь ей расти: каждая поддержка — это новые обновления, музыка и персонажи.",
+    supSoon: "Ссылки для доната скоро появятся. А пока можно помочь по-другому:", supFree: "Помочь бесплатно",
+    supWays: [["ui_love", "Расскажите друзьям", "Поделитесь ссылкой на сайт — так игру найдёт больше людей."], ["ui_talk", "Подпишитесь на YouTube", "Лайк и комментарий под видео очень помогают каналу."], ["ui_quest", "Предложите идею", "Лучшие идеи попадают в следующие версии."], ["ui_hammer", "Найдите баг", "Опишите, что сломалось, — исправим в обновлении."]],
+    share: "Поделиться ссылкой", copied: "Ссылка скопирована!", ytSub: "Канал на YouTube", ytSoon: "Скоро на YouTube", made: "Сделано на Godot 4.3",
   },
   en: {
     tagline: "A pixel RPG sandbox for Android about surviving the undead, magic and life in medieval kingdoms",
     download: "Download for Android", watch: "Watch trailer",
-    tabs: { home: "Home", updates: "Updates", bugs: "Fixed bugs", items: "Items", chars: "Characters", mobs: "Creatures", world: "World & lore", video: "Video", sounds: "Sounds", dl: "Download", ideas: "Suggestions" },
+    tabs: { home: "Home", updates: "Updates", bugs: "Fixed bugs", items: "Items", chars: "Characters", mobs: "Creatures", world: "World & lore", video: "Video", sounds: "Sounds", dl: "Download", ideas: "Suggestions", support: "Support" },
     sound: "Sound", music: "Music", search: "Search items…", all: "All",
     craftAt: "Crafted at", byHand: "By hand", price: "Price", noRecipe: "Not craftable: found in the world or sold in shops",
     story: "Story", role: "In game", lines: "Quotes", hp: "Health", dmg: "Damage", drops: "Drops", hostile: "Hostile", peaceful: "Peaceful", boss: "Boss", flying: "Flies",
@@ -42,7 +56,12 @@ window.UI = {
     dlTitle: "Download the game", dlMain: "Regular version", dlDev: "Developer version", dlDevNote: "A menu with everything: god mode, any item, monsters, cutscenes. Installs alongside the regular version.",
     install: "How to install", installSteps: ["Download the APK to your phone.", "Open it and allow installs from unknown sources.", "Requires Android 7.0+ and about 200 MB of free space."],
     soundsMusic: "Game music", soundsSfx: "Sound effects", credits: "Art, sound and music credits",
-    videoLocal: "Videos", ytSoon: "Coming to YouTube", made: "Made with Godot 4.3",
+    videoLocal: "Videos",
+    downloads: "downloads", dlCount: "Downloads",
+    supTitle: "Support the game", supText: "The game is free and has no ads. If you enjoy it, you can help it grow: every bit of support means new updates, music and characters.",
+    supSoon: "Donation links are coming soon. Meanwhile, you can help in other ways:", supFree: "Help for free",
+    supWays: [["ui_love", "Tell your friends", "Share the site link so more people find the game."], ["ui_talk", "Subscribe on YouTube", "A like and a comment really help the channel."], ["ui_quest", "Suggest an idea", "The best ideas make it into the next versions."], ["ui_hammer", "Report a bug", "Tell us what broke and we’ll fix it in an update."]],
+    share: "Share the link", copied: "Link copied!", ytSub: "YouTube channel", ytSoon: "Coming to YouTube", made: "Made with Godot 4.3",
   }
 };
 

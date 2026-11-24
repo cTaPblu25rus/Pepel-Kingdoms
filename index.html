@@ -17,6 +17,7 @@
   <div class="bar">
     <img class="logo" src="assets/img/logo.png" alt="Пепел и Чары" data-go="home">
     <div class="sp"></div>
+    <button class="btn" id="donbtn" data-go="support" style="border-color:#e5554f;color:#ffb3ad">♥ <span class="lbl" data-t="tabs.support"></span></button>
     <button class="btn" id="mus" title="Музыка"><span>♪</span><span class="lbl" data-t="music"></span></button>
     <button class="btn" id="snd" title="Звук"><span>🔊</span><span class="lbl" data-t="sound"></span></button>
     <button class="btn" id="lang">EN</button>
@@ -88,7 +89,7 @@
     <h2 data-t="dlTitle"></h2>
     <div class="grid g2">
       <div class="dl"><img src="assets/img/avatar.jpg" alt="">
-        <div><h3 data-t="dlMain"></h3><p class="mute">v3.2 · Android 7.0+ · ~60 MB</p><a class="btn big" id="apk1" download><span data-t="download"></span></a></div></div>
+        <div><h3 data-t="dlMain"></h3><p class="mute">v3.2 · Android 7.0+ · ~60 MB</p><p class="dlc"><img src="assets/ui/ui_bag.png" alt=""><span data-t="dlCount"></span>: <b class="dlnum">…</b></p><a class="btn big" id="apk1" download><span data-t="download"></span></a></div></div>
       <div class="dl"><img src="assets/ui/ui_settings.png" alt="" style="width:72px">
         <div><h3 data-t="dlDev"></h3><p class="mute" data-t="dlDevNote"></p><a class="btn" id="apk2" download>DEV APK</a></div></div>
     </div>
@@ -106,6 +107,19 @@
     <button class="btn big" id="isend"><img src="assets/ui/ui_quest.png" alt=""><span data-t="send"></span></button>
     <p class="mute" data-t="ideaHint"></p>
     <p><a id="iall" target="_blank" rel="noopener" data-t="allIdeas"></a></p>
+  </div>
+</section>
+<section id="tab-support">
+  <div class="panel" style="max-width:860px;margin:0 auto 20px">
+    <h2 data-t="supTitle"></h2>
+    <p data-t="supText"></p>
+    <div id="donlist" class="don"></div>
+  </div>
+  <div class="panel" style="max-width:860px;margin:auto">
+    <h2 data-t="supFree"></h2>
+    <div class="grid g2" id="supways"></div>
+    <div class="row2"><button class="btn big" id="sharebtn"><img src="assets/ui/ui_love.png" alt=""><span data-t="share"></span></button>
+    <a class="btn big" id="ytsub" target="_blank" rel="noopener" style="background:#5a1f1f;border-color:#e5554f"><span data-t="ytSub"></span></a></div>
   </div>
 </section>
 </main>
