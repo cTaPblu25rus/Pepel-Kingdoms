@@ -1,6 +1,6 @@
 // Тексты сайта (RU / EN). Здесь удобно править описание игры, обновления и ссылки.
 window.CONFIG = {
-  repo: "cTaPblu25rus/pepel-kingdoms",
+  repo: "cTaPblu25rus/Pepel-Kingdoms",
   // ID ролика на YouTube (часть ссылки после v=). Пока пусто — показываются видео с сайта.
   youtube: "",
   youtubeChannel: "",
