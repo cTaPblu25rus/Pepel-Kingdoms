@@ -23,11 +23,20 @@ window.CONFIG = {
   apkSize: "60 МБ"
 };
 
+// Старые версии: при выходе новой версии предыдущий APK переносится сюда
+window.OLD_VERSIONS = [
+  ["3.2", "24.11.2026", "Музыка", "Music", "download/old/PepelKingdoms_v3.2.apk", 60],
+  ["3.1", "23.11.2026", "Флирт и подарки", "Flirting & gifts", "download/old/PepelKingdoms_v3.1.apk", 52],
+  ["3.0", "23.11.2026", "Большое обновление", "The big update", "download/old/PepelKingdoms_v3.0.apk", 52],
+  ["2.0", "21.11.2026", "Королевства", "Kingdoms", "download/old/PepelKingdoms_v2.0.apk", 52],
+  ["1.0", "20.11.2026", "Пепел и Чары — первая версия", "Ash & Charms — first release", "download/old/PepelIChary_v1.0.apk", 50],
+];
+
 window.UI = {
   ru: {
     tagline: "Пиксельная RPG-песочница для Android о выживании среди нежити, магии и жизни в средневековых королевствах",
     download: "Скачать для Android", watch: "Смотреть трейлер",
-    tabs: { home: "Главная", updates: "Обновления", bugs: "Исправленные баги", items: "Предметы", chars: "Персонажи", mobs: "Существа", world: "Мир и история", video: "Видео", sounds: "Звуки", dl: "Скачать", ideas: "Предложения", support: "Поддержать" },
+    tabs: { home: "Главная", updates: "Обновления", bugs: "Исправленные баги", items: "Предметы", chars: "Персонажи", mobs: "Существа", world: "Мир и история", video: "Видео", sounds: "Звуки", dl: "Скачать", old: "Старые версии", ideas: "Предложения", support: "Поддержать" },
     sound: "Звук", music: "Музыка", search: "Поиск предмета…", all: "Все",
     craftAt: "Где сделать", byHand: "Руками", price: "Цена", noRecipe: "Не крафтится: находится в мире или продаётся",
     story: "История", role: "В игре", lines: "Реплики", hp: "Здоровье", dmg: "Урон", drops: "Добыча", hostile: "Враждебный", peaceful: "Мирный", boss: "Босс", flying: "Летает",
@@ -39,6 +48,7 @@ window.UI = {
     soundsMusic: "Музыка из игры", soundsSfx: "Звуки", credits: "Авторы графики, звука и музыки",
     videoLocal: "Видео с сайта",
     downloads: "скачиваний", dlCount: "Игру скачали",
+    oldTitle: "Старые версии игры", oldText: "Здесь хранятся прошлые версии — чтобы вспомнить, с чего всё начиналось.", oldWarn: "Старую версию нельзя поставить поверх новой: Android потребует сначала удалить игру, и сохранение пропадёт. Лучше ставить на другой телефон.", oldCur: "Текущая версия — во вкладке «Скачать».", oldDl: "Скачать",
     supTitle: "Поддержать игру", supText: "Игра бесплатная и без рекламы. Если она вам нравится, вы можете помочь ей расти: каждая поддержка — это новые обновления, музыка и персонажи.",
     supSoon: "Ссылки для доната скоро появятся. А пока можно помочь по-другому:", supFree: "Помочь бесплатно",
     supWays: [["ui_love", "Расскажите друзьям", "Поделитесь ссылкой на сайт — так игру найдёт больше людей."], ["ui_talk", "Подпишитесь на YouTube и TikTok", "Лайк и комментарий под видео очень помогают каналу."], ["ui_quest", "Предложите идею", "Лучшие идеи попадают в следующие версии."], ["ui_hammer", "Найдите баг", "Опишите, что сломалось, — исправим в обновлении."]],
@@ -47,7 +57,7 @@ window.UI = {
   en: {
     tagline: "A pixel RPG sandbox for Android about surviving the undead, magic and life in medieval kingdoms",
     download: "Download for Android", watch: "Watch trailer",
-    tabs: { home: "Home", updates: "Updates", bugs: "Fixed bugs", items: "Items", chars: "Characters", mobs: "Creatures", world: "World & lore", video: "Video", sounds: "Sounds", dl: "Download", ideas: "Suggestions", support: "Support" },
+    tabs: { home: "Home", updates: "Updates", bugs: "Fixed bugs", items: "Items", chars: "Characters", mobs: "Creatures", world: "World & lore", video: "Video", sounds: "Sounds", dl: "Download", old: "Old versions", ideas: "Suggestions", support: "Support" },
     sound: "Sound", music: "Music", search: "Search items…", all: "All",
     craftAt: "Crafted at", byHand: "By hand", price: "Price", noRecipe: "Not craftable: found in the world or sold in shops",
     story: "Story", role: "In game", lines: "Quotes", hp: "Health", dmg: "Damage", drops: "Drops", hostile: "Hostile", peaceful: "Peaceful", boss: "Boss", flying: "Flies",
@@ -59,6 +69,7 @@ window.UI = {
     soundsMusic: "Game music", soundsSfx: "Sound effects", credits: "Art, sound and music credits",
     videoLocal: "Videos",
     downloads: "downloads", dlCount: "Downloads",
+    oldTitle: "Old versions of the game", oldText: "Past versions live here — to see where it all began.", oldWarn: "An old version can’t be installed over a newer one: Android will ask you to uninstall the game first, and your save will be lost. Better use another phone.", oldCur: "The current version is in the Download tab.", oldDl: "Download",
     supTitle: "Support the game", supText: "The game is free and has no ads. If you enjoy it, you can help it grow: every bit of support means new updates, music and characters.",
     supSoon: "Donation links are coming soon. Meanwhile, you can help in other ways:", supFree: "Help for free",
     supWays: [["ui_love", "Tell your friends", "Share the site link so more people find the game."], ["ui_talk", "Follow on YouTube and TikTok", "A like and a comment really help the channel."], ["ui_quest", "Suggest an idea", "The best ideas make it into the next versions."], ["ui_hammer", "Report a bug", "Tell us what broke and we’ll fix it in an update."]],

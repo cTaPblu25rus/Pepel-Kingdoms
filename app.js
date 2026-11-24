@@ -1,6 +1,6 @@
 (() => {
 const G = window.GAME, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const TABS = ["home","updates","bugs","items","chars","mobs","world","video","sounds","dl","ideas","support"];
+const TABS = ["home","updates","bugs","items","chars","mobs","world","video","sounds","dl","old","ideas","support"];
 let L = "ru";
 try { L = localStorage.getItem("lang") || "ru"; } catch (e) {}
 const T = k => k.split(".").reduce((o, p) => o && o[p], UI[L]) || k;
@@ -86,7 +86,7 @@ function render() {
   $("#credits").innerHTML = CREDITS.map(c => `<li>${esc(c)}</li>`).join("");
   $("#isearch").placeholder = T("search"); $("#itext").placeholder = T("ideaText");
   $("#itype").innerHTML = UI[L].ideaTypes.map((x, k) => `<option value="${k}">${x}</option>`).join("");
-  renderSupport(); renderYT(); renderFilters(); renderItems(); renderChars(); renderMobs(); renderTracks(); renderSfx();
+  renderOld(); renderSupport(); renderYT(); renderFilters(); renderItems(); renderChars(); renderMobs(); renderTracks(); renderSfx();
 }
 $("#lang").onclick = () => { L = L === "ru" ? "en" : "ru"; try { localStorage.setItem("lang", L); } catch (e) {} render(); };
 
@@ -170,6 +170,13 @@ Promise.all([getCount("apk"), getCount("apk-dev")]).then(([a, b]) => { if (a == 
 function hit(key) { try { fetch(`${CONFIG.counter}/hit/${CONFIG.counterNs}/${key}`, {keepalive: true}).catch(() => {}); } catch (e) {} if (dlTotal != null) { dlTotal++; showCount(); } }
 $("#apk1").addEventListener("click", () => { sfx("coin", .6); hit("apk"); });
 $("#apk2").addEventListener("click", () => { sfx("coin", .6); hit("apk-dev"); });
+
+/* ---------- старые версии ---------- */
+function renderOld() {
+  const i = L === "ru" ? 2 : 3;
+  $("#oldlist").innerHTML = OLD_VERSIONS.map(v => `<div class="oldv"><span class="ver">v${v[0]}</span><div style="flex:1"><b>${esc(v[i])}</b><div class="mute" style="font-size:13px">${v[1]} · ~${v[5]} MB</div></div><a class="btn" href="${v[4]}" download data-old="${v[0]}">${T("oldDl")}</a></div>`).join("");
+}
+document.addEventListener("click", e => { const a = e.target.closest("[data-old]"); if (a) { sfx("coin", .5); try { fetch(`${CONFIG.counter}/hit/${CONFIG.counterNs}/old-${a.dataset.old}`, {keepalive: true}).catch(() => {}); } catch (x) {} } });
 
 /* ---------- поддержка ---------- */
 function renderSupport() {
