@@ -202,6 +202,13 @@
 "act": "slash",
 "actn": 6
 },
+"m_horse": {
+"walk": 4,
+"act": "walk",
+"actn": 4,
+"w": 65,
+"h": 62
+},
 "m_orc": {
 "walk": 8,
 "act": "slash",

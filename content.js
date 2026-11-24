@@ -8,7 +8,7 @@ window.CONFIG = {
     ["djKfMAfGBjM", "Трейлер: RPG для телефона, где можно всё", "Trailer: a phone RPG where you can do everything"],
     ["MSoMffsTiWM", "Обзор: от игры про зомби до целого мира", "Review: from a zombie game to a whole world"]
   ],
-  version: "3.2",
+  version: "3.3",
   // Счётчик скачиваний (бесплатный сервис abacus.jasoncameron.dev): считает нажатия на кнопки скачивания
   counter: "https://abacus.jasoncameron.dev",
   counterNs: "pepel-kingdoms-ctapblu25rus",
@@ -18,8 +18,8 @@ window.CONFIG = {
     { name: "DonationAlerts", url: "", ru: "Донат с сообщением", en: "Donation with a message" },
     { name: "ЮMoney", url: "", ru: "Перевод картой", en: "Card transfer" }
   ],
-  apk: "download/PepelKingdoms_v3.2.apk",
-  apkDev: "download/PepelKingdoms_v3.2_DEV.apk",
+  apk: "download/PepelKingdoms_v3.3.apk",
+  apkDev: "download/PepelKingdoms_v3.3_DEV.apk",
   apkSize: "60 МБ"
 };
 
@@ -74,10 +74,12 @@ window.FEATURES = [
   ["ui_talk", "Диалоги с выбором", "Choice dialogues", "Каждый ответ меняет отношения. Жители помнят доброту и грубость.", "Every answer changes relationships. Villagers remember kindness and rudeness."],
   ["ui_love", "Любовь и семья", "Love & family", "Флирт, свидания, подарки со смущением, свадьба, дети, которые растут.", "Flirting, dates, blushing gift scenes, a wedding and children who grow up."],
   ["ui_craft", "Крафт и развитие", "Crafting & progression", "8 станков, навыки и улучшение снаряжения на наковальне до +5.", "8 workstations, a skill tree and anvil upgrades up to +5."],
+  ["ui_map", "Кони и подземелья", "Horses & dungeons", "Оседлайте дикую лошадь, призовите огненного скакуна, спуститесь в Подземелье Испытаний.", "Saddle a wild horse, summon a fire steed, descend into the Trial Dungeon."],
   ["ui_food", "Выживание и ферма", "Survival & farming", "Голод, жажда, грядки, полив, домашние животные и готовка.", "Hunger, thirst, garden beds, watering, tamed animals and cooking."],
 ];
 
 window.UPDATES = [
+  { v: "3.3", date: "24.11.2026", ru: "Странствия", en: "Wanderings", items_ru: ["Кони: в полях пасутся дикие лошади. Подойдите с седлом, нажмите «Оседлать» — и у вас свой конь с именем. Верхом в 1,75 раза быстрее", "Свисток зовёт коня откуда угодно, а когда вы спешитесь, он ждёт рядом и щиплет траву", "Призрачный конь из свитка: быстрее обычного и растворяется, когда вы спешитесь", "Огненный скакун — самый быстрый и оставляет огненный след, который жжёт врагов", "Обыск: брошенные повозки, руины и могилы. Из могилы может подняться мертвец", "Караваны под охраной разбойников, а у разбойников — седельные сумки с добычей", "Подземелье Испытаний: с каждым этажом враги сильнее и награда богаче, каждый пятый этаж охраняет босс", "За стражей этажей — призрачный конь, оберег и рог огненного скакуна. Можно начать с 6-го, 11-го этажа…", "Магия: свиток возвращения домой, свиток странника в ближайший город, руна выхода, зелье щита, оберег", "Сад: поливалка, пугало (+1 к урожаю), удобрение и золотая лейка на 9 грядок"], items_en: ["Horses: wild horses graze in the fields. Bring a saddle, press “Saddle up” and you get your own named horse. Riding is 1.75× faster", "A whistle calls your horse from anywhere; when you dismount it waits nearby and grazes", "The Ghost Steed from a scroll: faster than a horse, fades away when you dismount", "The Fire Steed is the fastest and leaves a burning trail that scorches enemies", "Searching: abandoned carts, ruins and graves. A grave may raise the dead", "Caravans guarded by bandits, and bandits carry saddlebags full of loot", "The Trial Dungeon: every floor is harder and richer, every fifth floor has a boss", "Floor guardians drop the Ghost Steed, a Ward Amulet and the Fire Steed horn. Start again from floor 6, 11…", "Magic: Scroll of Return home, Wanderer’s Scroll to the nearest town, Rune of Escape, Shield Potion, Ward Amulet", "Garden: sprinkler, scarecrow (+1 harvest), fertilizer and a golden can for 9 beds"] },
   { v: "3.2", date: "24.11.2026", ru: "Музыка", en: "Music", items_ru: ["4 новых ретро-трека: меню, день в мире, города, ночь и бой", "Музыка меняется сама: в городе — своя, рядом с врагами включается боевая", "Строить и сносить можно на 9 клеток от героя вместо 7"], items_en: ["4 new retro tracks: menu, open world, towns, night & combat", "Music changes by itself: towns have their own theme, combat music kicks in near enemies", "Build and demolish range raised from 7 to 9 tiles"] },
   { v: "3.1", date: "23.11.2026", ru: "Флирт и подарки", en: "Flirting & gifts", items_ru: ["Флирт: комплименты, шутки, подмигивание, взять за руку, поцеловать в щёку, обнять", "У каждой девушки любимый комплимент — угадаете, и она тает", "Подарок — отдельная сценка: румянец, сердечки, смущение", "«Расскажи о себе»: хобби, любимая еда, страхи и мечты — потом она проверит, помните ли вы", "Ревность, если флиртовать с другой в том же городе"], items_en: ["Flirting: compliments, jokes, winks, holding hands, a kiss on the cheek, hugs", "Every girl has a favorite compliment — guess it and she melts", "Gifts are a little scene: blushing, hearts, embarrassment", "“Tell me about yourself”: hobbies, favorite food, fears and dreams — she’ll later check if you remember", "Jealousy if you flirt with someone else in the same town"] },
   { v: "3.0", date: "23.11.2026", ru: "Большое обновление", en: "The big update", items_ru: ["Строительство как в Terraria: касание, протяжка рядом, поворот, снос молотом, перенос", "241 предмет: 9 стен, 10 полов, больше 60 вещей мебели и декора, новое оружие и броня", "Навыки: 8 веток по 5 ступеней, очко за каждый уровень", "Наковальня: улучшение оружия, брони и инструментов до +5", "Города в 2–3 раза больше: стены, ворота, стража и башни, которые стреляют по монстрам", "Внутри стен монстры не наносят урон", "Рынок: продавец за каждым прилавком", "Интерьеры: таверна, лавка, гильдия, жилые дома — в них нужно постучать", "Гильдия искателей приключений: контракты и ранги от медного до мифрилового", "Диалоги как в классических RPG: портрет, имя, варианты ответа", "Семья: дела по дому для супруга, дети растут и ходят с вами в поход"], items_en: ["Terraria-style building: tap, drag rows, rotate, hammer demolition, moving", "241 items: 9 walls, 10 floors, 60+ furniture and decor pieces, new weapons and armor", "Skills: 8 branches with 5 ranks, a point every level", "Anvil: upgrade weapons, armor and tools up to +5", "Towns 2–3× bigger: walls, gates, guards and towers that shoot monsters", "Monsters deal no damage inside the walls", "Market: a vendor behind every stall", "Interiors: tavern, shop, guild, homes — knock on the door", "Adventurers’ Guild: contracts and ranks from Copper to Mythril", "Classic RPG dialogues: portrait, name plate, answer choices", "Family: chores for your spouse, kids grow up and join your adventures"] },
@@ -88,6 +90,7 @@ window.UPDATES = [
 
 // [версия, RU, EN, картинка «как было» или "", картинка «как стало» или ""]
 window.BUGS = [
+  ["3.3", "В пещерах кнопка «Действие» не замечала лестницу, сундуки и руду, а монстры не гнались за героем", "In caves the Action button missed the ladder, chests and ore, and monsters didn’t chase you", "", ""],
   ["3.1", "Можно было выйти из дома через проём двери прямо в пустоту", "You could walk out of a house through the doorway into the void", "b31_void", "img/shot_house"],
   ["3.1", "В гильдии, лавке и таверне не было людей: они стояли на улице, а комната пустовала", "The guild, shop and tavern were empty: their people stood outside", "b31_guild", "img/shot_guild"],
   ["3.1", "Длинные варианты ответа обрезались за краем экрана", "Long dialogue choices were cut off at the screen edge", "b31_choices", "img/shot_flirt"],
@@ -111,6 +114,8 @@ window.WORLD = {
     ["День и ночь", "Днём собирай ресурсы, строй и торгуй. Ночью из земли встают мертвецы, а в темноте опасно. Спасают костры, факелы, крепкие стены и двери — монстры сквозь них не проходят."],
     ["Города", "Город окружён стенами, у ворот стоит стража, по углам — башни с лучниками. Внутри стен монстры не наносят урон. На рынке за прилавками стоят продавцы, в таверне сдают комнаты, в гильдии выдают контракты."],
     ["Жители", "У каждого жителя свой характер, любимые вещи, страхи и мечты. Они запоминают, как вы с ними говорили, просят о помощи, зовут в гости — и могут влюбиться."],
+    ["Подземелье Испытаний", "Каменные врата с черепом ведут вниз. На каждом этаже враги сильнее, сундуки богаче, а каждый пятый этаж стережёт босс. Рекорд запоминается, и можно начать с 6-го, 11-го, 16-го этажа."],
+    ["Кони", "Дикие лошади пасутся в полях. С седлом в руке нажмите «Оседлать». Конь получит имя, будет ждать вас и прибежит на свист. Призрачного коня и огненного скакуна можно добыть у стражей подземелья."],
     ["Пещеры", "Под землёй — руда, кристаллы, драгоценные камни, сундуки и летучие мыши. Возьми факел и кирку."],
     ["Управление", "Джойстик слева — ходьба. Большая кнопка справа — атака или использование вещи в руке. «Действие» — говорить, открывать, собирать урожай, стучать в двери. Кнопка с молотком — режим стройки."],
   ],
@@ -120,6 +125,8 @@ window.WORLD = {
     ["Day and night", "By day, gather, build and trade. At night the dead rise and darkness is dangerous. Campfires, torches, sturdy walls and doors keep you safe — monsters can’t pass through them."],
     ["Towns", "Towns are surrounded by walls, guarded at the gates, with archer towers on the corners. Monsters deal no damage inside. Vendors stand behind market stalls, taverns rent rooms, and the guild hands out contracts."],
     ["Villagers", "Every villager has a personality, favorite things, fears and dreams. They remember how you talked to them, ask for help, invite you over — and may fall in love."],
+    ["The Trial Dungeon", "A stone gate with a skull leads down. Each floor has stronger enemies and richer chests, and every fifth floor is guarded by a boss. Your record is saved, so you can start again from floor 6, 11 or 16."],
+    ["Horses", "Wild horses graze in the fields. Hold a saddle and press “Saddle up”. Your horse gets a name, waits for you and comes to your whistle. The Ghost Steed and the Fire Steed are dropped by dungeon guardians."],
     ["Caves", "Underground lie ore, crystals, gems, chests and bats. Bring a torch and a pickaxe."],
     ["Controls", "Left joystick — move. Big right button — attack or use the held item. “Action” — talk, open, harvest, knock. The hammer button — building mode."],
   ]
@@ -129,6 +136,7 @@ window.CREDITS = [
   "Персонажи, жители, нежить, одежда и оружие: Universal LPC Spritesheet Generator (Liberated Pixel Cup) — CC-BY-SA 3.0 / GPL 3.0",
   "Земля, вода, монстры, деревья, урожай, интерьеры: LPC Base Assets, [LPC] Trees, Crops, House interior, Tile Atlas — CC-BY-SA 3.0",
   "Животные фермы: daneeklu — CC-BY 3.0",
+  "Кони: [LPC] Horses — bluecarrot16, CC-BY 3.0 / GPL 3.0 / OGA-BY 3.0",
   "Иконки: 496 pixel art icons — Henrique Lazarini (7Soul1), CC0",
   "Музыка: Chiptune Adventures — Juhani Junkala (SubspaceAudio), CC0; Empty City, Dark Forest Theme — CC0; Dark Ambience Loop — Iwan Gabovitch, CC-BY 3.0",
   "Звуки: 80 CC0 RPG SFX — rubberduck; Ghost moans — qubodup (CC0)",

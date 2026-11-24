@@ -7,6 +7,7 @@
 • [LPC] Trees — bluecarrot16, Jetrel, Zabin, Hyptosis, Surt, Buch, Johann Charlot, Stephen Challener и др. CC-BY-SA 3.0.
 • [LPC] Crops — bluecarrot16, Daniel Armstrong, Joshua Taylor, Lanea Zimmerman и др. CC-BY-SA 3.0 / GPL 3.0.
 • LPC style farm animals — daneeklu. CC-BY 3.0 / GPL 2.0.
+• [LPC] Horses — bluecarrot16 (https://opengameart.org/content/lpc-horses). CC-BY 3.0 / GPL 3.0 / OGA-BY 3.0.
 • [LPC] Farming tilesets, magic animations and UI — daneeklu. CC-BY-SA 3.0 / GPL 3.0.
 • [LPC] House interior and decorations — Lanea Zimmerman, Janna/Jannax, Hyptosis и др. CC-BY-SA 3.0.
 • LPC Tile Atlas 1 и 2, LPC City outside — Casper Nilsson, Daniel Cook, Johann Charlot, Tuomo Untinen, Hyptosis, Guido Bos и др. CC-BY-SA 3.0.
