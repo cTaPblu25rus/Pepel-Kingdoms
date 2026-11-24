@@ -131,8 +131,8 @@ function renderMobs() { $("#moblist").replaceChildren(...G.mobs.map(m => { const
   <div class="tagl">${m.boss ? `<span class="b">${T("boss")}</span>` : ""}<span class="${m.hostile ? "h" : "p"}">${m.hostile ? T("hostile") : T("peaceful")}</span>${m.fly ? `<span>${T("flying")}</span>` : ""}</div>
   <div>❤ ${T("hp")}: <b>${m.hp}</b>${m.dmg ? ` · ⚔ ${T("dmg")}: <b>${m.dmg}</b>` : ""}</div><p style="margin:6px 0">${esc(m["d_" + L])}</p>
   ${m.drops.length ? `<div class="pix" style="font-size:13px;color:var(--mute)">${T("drops")}</div><div class="drops">${m.drops.map(x => `<img src="${icon(x)}" title="${esc(nm(x))}" alt="${esc(nm(x))}">`).join("")}</div>` : ""}`;
-  const h = m.lpc ? 128 : Math.min(110, m.h); const s = sprite("m_" + m.id + "_walk", m.walk, m.w, m.h, h, m.lpc ? 9 : 6); d.querySelector(".stage").append(s);
-  if (m.lpc) d.querySelector(".stage").onclick = () => { setSheet(s, "m_" + m.id + "_slash", m.actn); sfx("swing", .4); s._once = () => setSheet(s, "m_" + m.id + "_walk", m.walk); };
+  const h = m.lpc ? 128 : Math.min(110, m.h); const sid = m.spr || m.id; const s = sprite("m_" + sid + "_walk", m.walk, m.w, m.h, h, m.lpc ? 9 : 6); if (m.filter) s.style.filter = m.filter; d.querySelector(".stage").append(s);
+  if (m.lpc) d.querySelector(".stage").onclick = () => { setSheet(s, "m_" + sid + "_slash", m.actn); sfx("swing", .4); s._once = () => setSheet(s, "m_" + sid + "_walk", m.walk); };
   return d; })); }
 
 /* ---------- звуки ---------- */
