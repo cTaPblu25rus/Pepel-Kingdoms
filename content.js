@@ -8,7 +8,7 @@ window.CONFIG = {
     ["djKfMAfGBjM", "Трейлер: RPG для телефона, где можно всё", "Trailer: a phone RPG where you can do everything"],
     ["MSoMffsTiWM", "Обзор: от игры про зомби до целого мира", "Review: from a zombie game to a whole world"]
   ],
-  version: "3.3",
+  version: "3.4",
   // Счётчик скачиваний (бесплатный сервис abacus.jasoncameron.dev): считает нажатия на кнопки скачивания
   counter: "https://abacus.jasoncameron.dev",
   counterNs: "pepel-kingdoms-ctapblu25rus",
@@ -18,13 +18,14 @@ window.CONFIG = {
     { name: "DonationAlerts", url: "", ru: "Донат с сообщением", en: "Donation with a message" },
     { name: "ЮMoney", url: "", ru: "Перевод картой", en: "Card transfer" }
   ],
-  apk: "download/PepelKingdoms_v3.3.apk",
-  apkDev: "download/PepelKingdoms_v3.3_DEV.apk",
+  apk: "download/PepelKingdoms_v3.4.apk",
+  apkDev: "download/PepelKingdoms_v3.4_DEV.apk",
   apkSize: "60 МБ"
 };
 
 // Старые версии: при выходе новой версии предыдущий APK переносится сюда
 window.OLD_VERSIONS = [
+  ["3.3", "24.11.2026", "Странствия", "Wanderings", "download/old/PepelKingdoms_v3.3.apk", 60],
   ["3.2", "24.11.2026", "Музыка", "Music", "download/old/PepelKingdoms_v3.2.apk", 60],
   ["3.1", "23.11.2026", "Флирт и подарки", "Flirting & gifts", "download/old/PepelKingdoms_v3.1.apk", 52],
   ["3.0", "23.11.2026", "Большое обновление", "The big update", "download/old/PepelKingdoms_v3.0.apk", 52],
@@ -90,6 +91,7 @@ window.FEATURES = [
 ];
 
 window.UPDATES = [
+  { v: "3.4", date: "24.11.2026", ru: "Исправления", en: "Fixes", items_ru: ["Вход в пещеру твёрдый: сквозь стенки ствола больше не пройти, войти можно только спереди", "Бочки, мешки и дрова у логова и караванов, руины и повозки стали твёрдыми", "Заклинания, стрелы и удары не проходят сквозь стены — ни ваши, ни вражеские. Автоприцел не выбирает врагов за стеной"], items_en: ["The cave entrance is solid: no more walking through the trunk, you enter from the front", "Barrels, sacks and firewood at dens and caravans, ruins and carts are now solid", "Spells, arrows and blows no longer pass through walls — yours or the enemies’. Auto-aim ignores enemies behind walls"] },
   { v: "3.3", date: "24.11.2026", ru: "Странствия", en: "Wanderings", items_ru: ["Кони: в полях пасутся дикие лошади. Подойдите с седлом, нажмите «Оседлать» — и у вас свой конь с именем. Верхом в 1,75 раза быстрее", "Свисток зовёт коня откуда угодно, а когда вы спешитесь, он ждёт рядом и щиплет траву", "Призрачный конь из свитка: быстрее обычного и растворяется, когда вы спешитесь", "Огненный скакун — самый быстрый и оставляет огненный след, который жжёт врагов", "Обыск: брошенные повозки, руины и могилы. Из могилы может подняться мертвец", "Караваны под охраной разбойников, а у разбойников — седельные сумки с добычей", "Подземелье Испытаний: с каждым этажом враги сильнее и награда богаче, каждый пятый этаж охраняет босс", "За стражей этажей — призрачный конь, оберег и рог огненного скакуна. Можно начать с 6-го, 11-го этажа…", "Магия: свиток возвращения домой, свиток странника в ближайший город, руна выхода, зелье щита, оберег", "Сад: поливалка, пугало (+1 к урожаю), удобрение и золотая лейка на 9 грядок"], items_en: ["Horses: wild horses graze in the fields. Bring a saddle, press “Saddle up” and you get your own named horse. Riding is 1.75× faster", "A whistle calls your horse from anywhere; when you dismount it waits nearby and grazes", "The Ghost Steed from a scroll: faster than a horse, fades away when you dismount", "The Fire Steed is the fastest and leaves a burning trail that scorches enemies", "Searching: abandoned carts, ruins and graves. A grave may raise the dead", "Caravans guarded by bandits, and bandits carry saddlebags full of loot", "The Trial Dungeon: every floor is harder and richer, every fifth floor has a boss", "Floor guardians drop the Ghost Steed, a Ward Amulet and the Fire Steed horn. Start again from floor 6, 11…", "Magic: Scroll of Return home, Wanderer’s Scroll to the nearest town, Rune of Escape, Shield Potion, Ward Amulet", "Garden: sprinkler, scarecrow (+1 harvest), fertilizer and a golden can for 9 beds"] },
   { v: "3.2", date: "24.11.2026", ru: "Музыка", en: "Music", items_ru: ["4 новых ретро-трека: меню, день в мире, города, ночь и бой", "Музыка меняется сама: в городе — своя, рядом с врагами включается боевая", "Строить и сносить можно на 9 клеток от героя вместо 7"], items_en: ["4 new retro tracks: menu, open world, towns, night & combat", "Music changes by itself: towns have their own theme, combat music kicks in near enemies", "Build and demolish range raised from 7 to 9 tiles"] },
   { v: "3.1", date: "23.11.2026", ru: "Флирт и подарки", en: "Flirting & gifts", items_ru: ["Флирт: комплименты, шутки, подмигивание, взять за руку, поцеловать в щёку, обнять", "У каждой девушки любимый комплимент — угадаете, и она тает", "Подарок — отдельная сценка: румянец, сердечки, смущение", "«Расскажи о себе»: хобби, любимая еда, страхи и мечты — потом она проверит, помните ли вы", "Ревность, если флиртовать с другой в том же городе"], items_en: ["Flirting: compliments, jokes, winks, holding hands, a kiss on the cheek, hugs", "Every girl has a favorite compliment — guess it and she melts", "Gifts are a little scene: blushing, hearts, embarrassment", "“Tell me about yourself”: hobbies, favorite food, fears and dreams — she’ll later check if you remember", "Jealousy if you flirt with someone else in the same town"] },
@@ -101,7 +103,10 @@ window.UPDATES = [
 
 // [версия, RU, EN, картинка «как было» или "", картинка «как стало» или ""]
 window.BUGS = [
-  ["3.3", "В пещерах кнопка «Действие» не замечала лестницу, сундуки и руду, а монстры не гнались за героем", "In caves the Action button missed the ladder, chests and ore, and monsters didn’t chase you", "", ""],
+  ["3.4", "Герой проходил сквозь вход в пещеру", "The hero walked through the cave entrance", "b34_cave", "bugs/a34_cave"],
+  ["3.4", "Герой проходил сквозь бочки и дрова у логова", "The hero walked through barrels and firewood at dens", "b34_den", "bugs/a34_den"],
+  ["3.4", "Из дома можно было бить монстров заклинаниями сквозь стены", "You could hit monsters through walls with spells from inside a house", "", "bugs/a34_wall"],
+  ["3.3", "В пещерах нельзя было открыть сундук, монстры не нападали, а невидимые камни мешали пройти", "In caves chests wouldn’t open, monsters didn’t attack and invisible rocks blocked the way", "b33_cave", "upd/u33_7"],
   ["3.1", "Можно было выйти из дома через проём двери прямо в пустоту", "You could walk out of a house through the doorway into the void", "b31_void", "img/shot_house"],
   ["3.1", "В гильдии, лавке и таверне не было людей: они стояли на улице, а комната пустовала", "The guild, shop and tavern were empty: their people stood outside", "b31_guild", "img/shot_guild"],
   ["3.1", "Длинные варианты ответа обрезались за краем экрана", "Long dialogue choices were cut off at the screen edge", "b31_choices", "img/shot_flirt"],
