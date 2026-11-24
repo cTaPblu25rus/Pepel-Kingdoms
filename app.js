@@ -77,14 +77,16 @@ function render() {
   const i = L === "ru" ? 0 : 1;
   $("#stats").innerHTML = [[G.items.length, L === "ru" ? "предметов" : "items"], [G.mobs.length, L === "ru" ? "существ" : "creatures"], [6, L === "ru" ? "профессий" : "professions"], [8, L === "ru" ? "станков" : "stations"]].map(s => `<div class="stat"><b>${s[0]}</b>${s[1]}</div>`).join("");
   $("#features").innerHTML = FEATURES.map(f => `<div class="panel feat"><img src="assets/ui/${f[0]}.png" alt=""><div><h3>${f[1 + i]}</h3>${f[3 + i]}</div></div>`).join("");
-  $("#updlist").innerHTML = UPDATES.map(u => `<div class="upd"><h3>v${u.v} — ${u[L]} <span>${u.date}</span></h3><ul>${u["items_" + L].map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
-  $("#buglist").innerHTML = BUGS.map(b => `<div class="bug"><span class="tag">v${b[0]}</span><div><s>${esc(b[1 + i])}</s> <span style="color:var(--green)">✔ ${L === "ru" ? "исправлено" : "fixed"}</span></div></div>`).join("");
+  $("#updlist").innerHTML = UPDATES.map(u => `<div class="upd"><h3>v${u.v} — ${u[L]} <span>${u.date}</span></h3><div class="ucards">${u["items_" + L].map((x, k) => `<figure class="ucard"><img src="assets/upd/u${u.v.replace(".", "")}_${k}.jpg" alt="" loading="lazy" data-zoom><figcaption>${esc(x)}</figcaption></figure>`).join("")}</div></div>`).join("");
+  $("#buglist").innerHTML = BUGS.map(b => `<div class="bugc"><div class="bh"><span class="tag">v${b[0]}</span><b>${esc(b[1 + i])}</b> <span style="color:var(--green)">✔ ${L === "ru" ? "исправлено" : "fixed"}</span></div>
+    ${b[3] ? `<div class="ba"><figure><img src="assets/bugs/${b[3]}.jpg" alt="" loading="lazy" data-zoom><figcaption class="was">${L === "ru" ? "Как было" : "Before"}</figcaption></figure>${b[4] ? `<figure><img src="assets/${b[4]}.${b[4] === "img/logo" ? "png" : "jpg"}" alt="" loading="lazy" data-zoom${b[4] === "img/logo" ? ' style="object-fit:contain;background:#1a1210"' : ""}><figcaption class="now">${L === "ru" ? "Как стало" : "After"}</figcaption></figure>` : ""}</div>`
+    : `<p class="mute" style="margin:6px 0 0">${L === "ru" ? "Скриншота той версии не сохранилось." : "No screenshot of that version survived."}</p>`}</div>`).join("");
   $("#worldlist").innerHTML = WORLD[L].map(w => `<div class="panel" style="margin:0"><h3>${w[0]}</h3>${w[1]}</div>`).join("");
   $("#steps").innerHTML = UI[L].installSteps.map(s => `<li>${s}</li>`).join("");
   $("#credits").innerHTML = CREDITS.map(c => `<li>${esc(c)}</li>`).join("");
   $("#isearch").placeholder = T("search"); $("#itext").placeholder = T("ideaText");
   $("#itype").innerHTML = UI[L].ideaTypes.map((x, k) => `<option value="${k}">${x}</option>`).join("");
-  renderFilters(); renderItems(); renderChars(); renderMobs(); renderTracks(); renderSfx();
+  renderYT(); renderFilters(); renderItems(); renderChars(); renderMobs(); renderTracks(); renderSfx();
 }
 $("#lang").onclick = () => { L = L === "ru" ? "en" : "ru"; try { localStorage.setItem("lang", L); } catch (e) {} render(); };
 
@@ -92,7 +94,7 @@ $("#lang").onclick = () => { L = L === "ru" ? "en" : "ru"; try { localStorage.se
 let cat = "", sel = "sword_iron", q = "";
 const CATS = Object.keys(G.cats).filter(c => G.items.some(i => i.cat === c));
 function renderFilters() { $("#ifilters").innerHTML = [["", T("all")], ...CATS.map(c => [c, G.cats[c][L === "ru" ? 0 : 1]])].map(c => `<button class="btn ${c[0] === cat ? "on" : ""}" data-cat="${c[0]}">${c[1]}</button>`).join(""); }
-$("#ifilters").onclick = e => { const b = e.target.closest("[data-cat]"); if (!b) return; cat = b.dataset.cat; renderFilters(); renderItems(); };
+$("#ifilters").onclick = e => { const b = e.target.closest("[data-cat]"); if (!b) return; cat = b.dataset.cat; renderYT(); renderFilters(); renderItems(); };
 $("#isearch").oninput = e => { q = e.target.value.trim().toLowerCase(); renderItems(); };
 function renderItems() {
   const list = G.items.filter(i => (!cat || i.cat === cat) && (!q || i.ru.toLowerCase().includes(q) || i.en.toLowerCase().includes(q)));
@@ -152,9 +154,12 @@ const SHOTS = ["town", "market", "gate", "tower", "dialog", "flirt", "gift", "fa
 $("#gal").innerHTML = SHOTS.map(s => `<img src="assets/img/shot_${s}.jpg" alt="${s}" loading="lazy">`).join("");
 $("#gal").onclick = e => { if (e.target.tagName === "IMG") { $("#lb img").src = e.target.src; $("#lb").style.display = "flex"; } };
 $("#lb").onclick = () => $("#lb").style.display = "none";
+document.addEventListener("click", e => { const z = e.target.closest("[data-zoom]"); if (z) { $("#lb img").src = z.src; $("#lb").style.display = "flex"; } });
 
 /* ---------- видео, скачивание, предложения ---------- */
-if (CONFIG.youtube) { $("#ytbox").style.display = ""; $("#ytframe").src = `https://www.youtube-nocookie.com/embed/${CONFIG.youtube}`; }
+function renderYT() { if (!CONFIG.youtube.length) return; $("#ytbox").style.display = "";
+  $("#ytlist").innerHTML = CONFIG.youtube.map(v => `<div><h3>${esc(L === "ru" ? v[1] : v[2])}</h3><div class="yt" data-yt="${v[0]}"><img src="https://i.ytimg.com/vi/${v[0]}/hqdefault.jpg" alt="" loading="lazy"><button class="ytplay" aria-label="Play">▶</button></div><a href="https://youtu.be/${v[0]}" target="_blank" rel="noopener" class="mute" style="font-size:13px">youtu.be/${v[0]}</a></div>`).join(""); }
+document.addEventListener("click", e => { const y = e.target.closest("[data-yt]"); if (!y || y.querySelector("iframe")) return; y.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${y.dataset.yt}?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="YouTube"></iframe>`; music.pause(); });
 $("#apk1").href = CONFIG.apk; $("#apk2").href = CONFIG.apkDev;
 const repoUrl = `https://github.com/${CONFIG.repo}`; $("#repo").href = repoUrl; $("#iall").href = repoUrl + "/issues";
 $$("#apk1,#apk2").forEach(a => a.addEventListener("click", () => sfx("coin", .6)));

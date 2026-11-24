@@ -2,8 +2,11 @@
 window.CONFIG = {
   repo: "cTaPblu25rus/Pepel-Kingdoms",
   // ID ролика на YouTube (часть ссылки после v=). Пока пусто — показываются видео с сайта.
-  youtube: "",
-  youtubeChannel: "",
+  // Ролики на YouTube: [ID, название RU, название EN]
+  youtube: [
+    ["djKfMAfGBjM", "Трейлер: RPG для телефона, где можно всё", "Trailer: a phone RPG where you can do everything"],
+    ["MSoMffsTiWM", "Обзор: от игры про зомби до целого мира", "Review: from a zombie game to a whole world"]
+  ],
   version: "3.2",
   apk: "download/PepelKingdoms_v3.2.apk",
   apkDev: "download/PepelKingdoms_v3.2_DEV.apk",
@@ -63,20 +66,22 @@ window.UPDATES = [
   { v: "1.0", date: "20.11.2026", ru: "Первая версия", en: "First release", items_ru: ["Пиксельная игра о выживании в зомби-апокалипсисе", "Магия и сюжет", "Небольшой мир с заданиями по истории"], items_en: ["A pixel zombie-apocalypse survival game", "Magic and a story", "A small world with story quests"] },
 ];
 
+// [версия, RU, EN, картинка «как было» или "", картинка «как стало» или ""]
 window.BUGS = [
-  ["3.1", "Можно было выйти из дома через проём двери в пустоту", "You could walk out of a house through the doorway into the void"],
-  ["3.1", "В гильдии, лавке и таверне не было нужных людей: они появлялись за пределами комнаты", "The guild, shop and tavern were empty: their people spawned outside the room"],
-  ["3.1", "Варианты ответа в диалоге уезжали за верх экрана", "Dialogue choices went off the top of the screen"],
-  ["3.0", "Пчёлы и летучие мыши пролетали сквозь стены", "Bees and bats flew through walls"],
-  ["3.0", "На кнопке «Действие» был нарисован кулон, которого нет среди предметов", "The Action button showed a pendant that wasn’t an item"],
-  ["3.0", "Постройки нельзя было повернуть, снести с возвратом или перенести", "Buildings couldn’t be rotated, demolished for a refund or moved"],
-  ["3.0", "Монстры наносили урон прямо в городе", "Monsters dealt damage right inside towns"],
-  ["3.0", "В названии игры не было букв «П» и «О» в пиксельном шрифте", "The pixel title font was missing the letters «П» and «О»"],
-  ["2.1", "Дыры и прозрачные пятна в текстурах земли", "Holes and transparent spots in ground textures"],
-  ["2.1", "Неправильно вырезанные печь, плита, верстак, прилавки и вход в пещеру", "Wrongly cut furnace, stove, workbench, stalls and cave entrance"],
-  ["2.1", "По врагам было очень трудно попасть из лука и магией", "Enemies were very hard to hit with bows and magic"],
-  ["2.1", "Игра падала при открытии доски заданий и на свадьбе в автотесте", "The game crashed when opening the quest board and during the wedding test"],
-  ["2.0", "Ломались текстуры персонажей и тайлов из первой версии", "Character and tile textures from the first version were broken"],
+  ["3.1", "Можно было выйти из дома через проём двери прямо в пустоту", "You could walk out of a house through the doorway into the void", "b31_void", "img/shot_house"],
+  ["3.1", "В гильдии, лавке и таверне не было людей: они стояли на улице, а комната пустовала", "The guild, shop and tavern were empty: their people stood outside", "b31_guild", "img/shot_guild"],
+  ["3.1", "Длинные варианты ответа обрезались за краем экрана", "Long dialogue choices were cut off at the screen edge", "b31_choices", "img/shot_flirt"],
+  ["3.0", "Пчёлы и летучие мыши пролетали сквозь стены и доставали героя в доме", "Bees and bats flew through walls and reached you inside", "b30_bees", ""],
+  ["3.0", "Монстры наносили урон прямо в городе, рядом со стражей", "Monsters dealt damage right in town, next to the guards", "b30_town", "img/shot_gate"],
+  ["3.0", "Прилавки на рынке были вырезаны неправильно и выглядели как раскрытые книги", "Market stalls were cut wrong and looked like open books", "b30_stalls", "img/shot_market"],
+  ["3.0", "На кнопке «Действие» был нарисован кулон, которого нет среди предметов", "The Action button showed a pendant that wasn’t an item", "b30_pendant", ""],
+  ["3.0", "Строить можно было только через список крафта: без поворота, сноса и переноса", "Building only worked via the craft list: no rotating, demolishing or moving", "b30_build", "img/shot_build"],
+  ["3.0", "В названии игры буквы «П» и «О» были из другого шрифта", "The letters «П» and «О» in the title came from a different font", "b30_font", "img/logo"],
+  ["2.1", "Стрелы и заклинания летели мимо: прицел не учитывал, что враг двигается", "Arrows and spells missed: aiming ignored enemy movement", "b21_aim", ""],
+  ["2.1", "Дыры и прозрачные пятна в текстурах земли", "Holes and transparent spots in ground textures", "", ""],
+  ["2.1", "Неправильно вырезанные печь, плита, верстак и вход в пещеру", "Wrongly cut furnace, stove, workbench and cave entrance", "", ""],
+  ["2.1", "Игра падала при открытии доски заданий и на свадьбе", "The game crashed when opening the quest board and at the wedding", "", ""],
+  ["2.0", "Ломались текстуры персонажей и тайлов из первой версии", "Character and tile textures from the first version were broken", "", ""],
 ];
 
 window.WORLD = {

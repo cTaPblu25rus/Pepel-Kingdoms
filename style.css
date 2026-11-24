@@ -56,7 +56,21 @@ section.on{display:block}
 .stat b{display:block;font-family:Pix;font-size:26px;color:var(--gold)}
 video{width:100%;border:4px solid #000;background:#000;display:block}
 .yt{position:relative;padding-top:56.25%}
-.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:4px solid #000}
+.yt{background:#000;border:4px solid #000;cursor:pointer}
+.yt iframe,.yt img{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;image-rendering:auto}
+.ytplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:30px;width:84px;height:60px;background:#c4302b;color:#fff;border:4px solid #000;cursor:pointer;font-family:Pix}
+.yt:hover .ytplay{background:#e8433c}
+.ucards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:10px}
+.ucard{margin:0;background:#1a1210;border:3px solid var(--edge)}
+.ucard img,.ba img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;cursor:zoom-in;image-rendering:auto;border-bottom:3px solid var(--edge)}
+.ucard figcaption{padding:8px 10px;font-size:15px}
+.bugc{padding:14px 0;border-bottom:2px dashed #4a3428}
+.bh{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.bh .tag{font-family:Pix;background:var(--green);color:#000;padding:1px 7px;flex:none}
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:10px;max-width:860px}
+.ba figure{margin:0;border:3px solid var(--edge);background:#1a1210}
+.ba figcaption{font-family:Pix;font-size:13px;padding:4px 8px}
+.was{color:var(--red)}.now{color:var(--green)}
 
 /* обновления */
 .upd{border-left:6px solid var(--ember);padding-left:16px;margin-bottom:22px}
